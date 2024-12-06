@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class StudentController {
     @Autowired
     StudentRepo repo;
-
     @GetMapping("")
     public Collection<Student> getall() {
 
@@ -28,11 +27,10 @@ public class StudentController {
 
     }
 
-    @PostMapping("/update")
-    public String UpdateStudents(@RequestBody Student student) {
-        repo.save(student);
-        return "Student updated as " + student.getName();
-
+    @PostMapping("/addmany")
+    public String postMethodName(@RequestBody Collection<Student> students) {
+        repo.saveAll(students);        
+        return "Students saved";
     }
     
 }

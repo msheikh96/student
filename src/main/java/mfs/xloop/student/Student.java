@@ -17,11 +17,11 @@ import lombok.Setter;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(columnDefinition="TEXT")
+    private Integer id; 
+    private String rollnumber;    
     private String name;
     private String grade;
     private float fee;
-    private boolean isactive; 
+    private boolean isactive;
 }
 
